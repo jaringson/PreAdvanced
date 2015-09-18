@@ -1,0 +1,14 @@
+#pragma once
+#include "Station.h"
+class Stack :
+	public Station
+{
+public:
+	Stack();
+	~Stack();
+	virtual bool addToStack();
+	virtual bool removeFromStack();
+	virtual int showTopOfStack();
+	virtual int showSizeOfStack();
+};
+

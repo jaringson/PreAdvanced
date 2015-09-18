@@ -1,0 +1,17 @@
+#pragma once
+#include "Station.h"
+class Deque :
+	public Station
+{
+public:
+	Deque();
+	~Deque();
+	virtual bool addToDequeLeft();
+	virtual bool addToDequeRight();
+	virtual bool removeFromDequeLeft();
+	virtual bool removeFromDequeRight();
+	virtual int showTopOfDequeLeft();
+	virtual int showTopOfDequeRight();
+	virtual int showSizeOfDeque();
+};
+

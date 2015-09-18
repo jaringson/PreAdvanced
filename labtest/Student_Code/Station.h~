@@ -1,0 +1,63 @@
+#pragma once
+#include "StationInterfaceExtra.h"
+#include "LinkedList.h"
+class Station :
+	public StationInterfaceExtra
+{
+protected:
+	/*struct Car
+	{
+		Car(int id_var)
+		{
+			id = id_var;
+		}
+		int id;
+		
+	};*/
+	int car_id;
+	LinkedList<int> station_car;
+	LinkedList<int> queue_cars;
+	LinkedList<int> deque_cars;
+	LinkedList<int> stack_cars;
+	LinkedList<int> IRdeque_cars;
+	LinkedList<int> ORdeque_cars;
+	int CURRENT_CAR = 1;
+	int CAPACITY = 5;
+
+public:
+	Station();
+	~Station();
+
+	bool addToStation(int car);
+	int showCurrentCar();
+	bool removeFromStation();
+	virtual bool addToStack() ;
+	virtual bool removeFromStack() ;
+	virtual int showTopOfStack();
+	virtual int showSizeOfStack();
+	virtual bool addToQueue();
+	virtual bool removeFromQueue();
+	virtual int showTopOfQueue();
+	virtual int showSizeOfQueue();
+	virtual bool addToDequeLeft();
+	virtual bool addToDequeRight();
+	virtual bool removeFromDequeLeft();
+	virtual bool removeFromDequeRight();
+	virtual int showTopOfDequeLeft();
+	virtual int showTopOfDequeRight();
+	virtual int showSizeOfDeque();
+
+	//Extra Credit
+	virtual bool addToIRDequeLeft();
+	virtual bool removeFromIRDequeLeft();
+	virtual bool removeFromIRDequeRight();
+	virtual int showTopOfIRDequeLeft();
+	virtual int showTopOfIRDequeRight();
+	virtual int showSizeOfIRDeque();
+	virtual bool addToORDequeLeft();
+	virtual bool addToORDequeRight();
+	virtual bool removeFromORDequeLeft();
+	virtual int showTopOfORDequeLeft();
+	virtual int showSizeOfORDeque();
+};
+

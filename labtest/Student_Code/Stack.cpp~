@@ -1,0 +1,61 @@
+#include "Stack.h"
+
+
+Stack::Stack()
+{
+}
+
+
+Stack::~Stack()
+{
+}
+bool Stack::addToStack()
+{
+	if (station_car.size() <= 0)
+	{
+		return false;
+	}
+	if (stack_cars.size() >= CAPACITY)
+	{
+		return false;
+	}
+	else
+	{
+		stack_cars.insertHead(station_car.at(0));
+		station_car.clear();
+		return true;
+	}
+}
+
+bool Stack::removeFromStack()
+{
+	if (station_car.size() >= 1)
+	{
+		return false;
+	}
+	else
+	{
+		station_car.insertHead(stack_cars.at(0));
+		stack_cars.remove(stack_cars.at(0));
+		return true;
+	}
+}
+
+int Stack::showTopOfStack()
+{
+	if (stack_cars.size() == 0)
+	{
+		return -1;
+	}
+	else
+	{
+		return stack_cars.at(0);
+	}
+
+}
+
+int Stack::showSizeOfStack()
+{
+	return stack_cars.size();
+}
+
