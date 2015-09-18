@@ -1,0 +1,15 @@
+Schemes:
+alpha(a,b,c,d,e)
+
+Facts:
+ 
+alpha('a','b','c','d','e').
+
+Rules: 
+ 
+alpha(b,c,d,e,a):-alpha(a,b,c,d,e).
+
+
+
+Queries:
+ alpha(a,b,c,d,e)?

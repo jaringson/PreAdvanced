@@ -1,0 +1,27 @@
+Schemes:
+    snap(s,n,a,p)
+    NameHasID(n,s)
+
+Facts:
+    snap('A','A space','A','A').
+    snap('A','A','A','A').
+    snap('B','B','B','B').
+    snap('B','C','C','B').
+    snap('B','C','D','B').
+    snap('S','C','D','B').
+    snap('S','C','C','B').
+    snap('S','D','D','B').
+    snap('S','S','D','D').
+
+Rules:
+    NameHasID(N,S):-snap(S,N,A,P).
+
+Queries:
+    snap('67890','Van Pelt','34 Pear','555-5678')?
+    snap(S,N,A,P)?
+    NameHasID('Snoopy',Id)?
+    NameHasID(Name,'67890')?
+	snap(S,'Snoopy',A,P)?
+	snap(A,'Snoopy',A,P)?
+	snap(A,B,B,A)?
+	snap(A,A,B,B)?
